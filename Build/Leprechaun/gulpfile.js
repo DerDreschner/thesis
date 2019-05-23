@@ -1,7 +1,7 @@
 //@ts-check
 "use strict";
 var gulp = require("gulp");
-var gulpConfig = require("../../gulp-config.js")()
+var gulpConfig = require("../gulp-config.js")()
 var spawn = require("child_process").spawn;
 var path = require("path")
 

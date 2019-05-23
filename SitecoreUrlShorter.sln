@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{E8A601A2-0532-4DDA-8D70-4075F1F6AC4D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{7043A1AE-2FFD-4783-A523-EDACA5165050}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{1F5132F9-C0BF-44B7-8F9F-745EAEBAFEC8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{CE4AC9B2-918B-4B8A-A3C6-73A2C4164DB2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -21,9 +15,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		Documentation\README.md = Documentation\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{3380B199-59D0-4E43-9C9F-6C98EB8B34B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "src\UserInterface\code\UserInterface.csproj", "{55517925-57AA-4275-8270-397FCC5023CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface.Tests", "src\UserInterface\tests\UserInterface.Tests.csproj", "{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sourcecode", "Sourcecode", "{C7DD0D4F-D3EE-450D-BEA2-B43F95041B8B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55517925-57AA-4275-8270-397FCC5023CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55517925-57AA-4275-8270-397FCC5023CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55517925-57AA-4275-8270-397FCC5023CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55517925-57AA-4275-8270-397FCC5023CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3380B199-59D0-4E43-9C9F-6C98EB8B34B9} = {C7DD0D4F-D3EE-450D-BEA2-B43F95041B8B}
+		{55517925-57AA-4275-8270-397FCC5023CB} = {3380B199-59D0-4E43-9C9F-6C98EB8B34B9}
+		{A7ED2FD8-DBD1-4799-A3BC-6ADB1DD7EB3F} = {3380B199-59D0-4E43-9C9F-6C98EB8B34B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16049732-D510-4140-81B9-853C6E3BFE4C}
