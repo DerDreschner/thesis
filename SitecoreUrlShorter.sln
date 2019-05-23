@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{E8A601A2-0532-4DDA-8D70-4075F1F6AC4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{7043A1AE-2FFD-4783-A523-EDACA5165050}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{1F5132F9-C0BF-44B7-8F9F-745EAEBAFEC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{CE4AC9B2-918B-4B8A-A3C6-73A2C4164DB2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{0392A955-1272-43FE-9BF3-F9EAD6724A54}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\README.md = Documentation\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16049732-D510-4140-81B9-853C6E3BFE4C}
+	EndGlobalSection
+EndGlobal
