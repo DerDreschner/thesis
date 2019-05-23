@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Web.UI;
 using Sitecore.Data.Items;
 using Sitecore.Shell.Framework.Commands;
@@ -11,12 +12,15 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Panels
     public class GenerateUrlPanel : RibbonPanel
     {
         [SuppressMessage("ReSharper", "StringLiteralTypo")]
-        public override void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context)
+        public void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context)
         {
             var htmlOutput = string.Empty;
 
+            var containsLayout = context.Items.Select(contextItem => string.IsNullOrEmpty(contextItem.Fields[Sitecore.FieldIDs.LayoutField].Value)).FirstOrDefault();
+
+
             htmlOutput +=
-                "<div style='line-height:40px'><button style='vertical-align: middle;' onclick='javascript:return scForm.invoke('contenteditor:home', event)'>Generate new URL</button></div>";
+                "<div style='line-height:40px'><button style='vertical-align: middle;' onclick=\"return scForm.invoke('contenteditor:home', event)\"" + (containsLayout ? "disabled" : string.Empty) + ">Generate new URL</button></div>";
 
             output.Write(htmlOutput);
         }
