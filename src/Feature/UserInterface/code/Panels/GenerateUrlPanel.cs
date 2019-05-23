@@ -12,7 +12,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Panels
     public class GenerateUrlPanel : RibbonPanel
     {
         [SuppressMessage("ReSharper", "StringLiteralTypo")]
-        public void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context)
+        public override void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context)
         {
             var htmlOutput = string.Empty;
 
