@@ -1,0 +1,22 @@
+﻿---
+ID: "dff98bc0-aa0c-4fa9-920d-00b9ddb6d988"
+Parent: "430ca388-4f5e-4ef0-8307-5a97556414cd"
+Template: "430ca388-4f5e-4ef0-8307-5a97556414cd"
+Path: /sitecore/templates/System/URL Shortening Service/URL Shortening Service Settings/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Fields:
+  - ID: "a0f9ecca-42e3-49fc-ab78-09b5d405cf3b"
+    Hint: ShorthandLength
+    Value: 7
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190524T034330Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
