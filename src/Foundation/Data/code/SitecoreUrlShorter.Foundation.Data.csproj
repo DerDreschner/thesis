@@ -72,6 +72,9 @@
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Rainbow, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Rainbow.Core.2.0.6\lib\net452\Rainbow.dll</HintPath>
     </Reference>
@@ -142,6 +145,7 @@
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />
+    <Content Include="App_Config\Include\Foundation\SitecoreUrlShorter\Foundation.Data.config" />
     <None Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
@@ -152,6 +156,7 @@
   <ItemGroup>
     <Compile Include="App_Start\GlassMapperSc.cs" />
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
+    <Compile Include="Infrastructure\DataServicesConfigurator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

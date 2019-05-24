@@ -5,21 +5,21 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
 {
     public class ShortUrlRepository : IShortUrlRepository
     {
-        private readonly IUrlShorteningServiceDataFolder _dataFolder;
+        private readonly IUrlShorteningServiceEntriesFolder _entriesFolder;
 
-        public ShortUrlRepository(IDataFolderRepository dataFolderRepository)
+        public ShortUrlRepository(ISettingsRepository settingsRepository)
         {
-            _dataFolder = dataFolderRepository.GetDataFolder();
+            _entriesFolder = settingsRepository.GetEntriesFolder();
         }
 
         public IUrlShorteningServiceEntry GetShortUrlEntryByShorthand(string shorthand)
         {
-            return _dataFolder.EntriesFolder.Entries.First(x => x.Shorthand == shorthand);
+            return _entriesFolder.Entries.First(x => x.Shorthand == shorthand);
         }
 
         public IUrlShorteningServiceEntry GetShortUrlEntryByDestination(string destination)
         {
-            return _dataFolder.EntriesFolder.Entries.First(x => x.Destination.Url == destination);
+            return _entriesFolder.Entries.First(x => x.Destination.Url == destination);
         }
     }
 }

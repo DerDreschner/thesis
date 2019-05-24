@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Glass.Mapper.Sc.Fields;
+using SitecoreUrlShorter.Feature.Core.Models;
 
 namespace SitecoreUrlShorter.Feature.Core.Repositories
 {
@@ -13,6 +14,8 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
         string GetDomain();
 
         Link GetFallbackUrl();
+
+        IUrlShorteningServiceEntriesFolder GetEntriesFolder();
 
     }
 }

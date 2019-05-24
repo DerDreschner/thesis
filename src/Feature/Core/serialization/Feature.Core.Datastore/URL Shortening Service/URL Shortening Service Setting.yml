@@ -18,6 +18,9 @@ Languages:
   - ID: "836a169d-e485-48e5-95e3-e27a01cc1101"
     Hint: Domain
     Value: shrtsvc.local
+  - ID: "bd64126e-f5fa-4bc0-8a6c-cebddbcd09ed"
+    Hint: Folder
+    Value: "{BA0E3166-3F23-4C6E-9D19-ED45BE1C05E7}"
   Versions:
   - Version: 1
     Fields:

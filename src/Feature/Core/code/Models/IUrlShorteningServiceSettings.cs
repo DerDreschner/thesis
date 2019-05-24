@@ -14,5 +14,9 @@ namespace SitecoreUrlShorter.Feature.Core.Models
 
         [SitecoreField(FieldId = Templates.UrlShorteningServiceSettings.Fields.FallbackUrl)]
         Link FallbackUrl { get; set; }
+
+        [SitecoreField(FieldId = Templates.UrlShorteningServiceSettings.Fields.Folder)]
+        [SitecoreLinked]
+        IUrlShorteningServiceEntriesFolder EntriesFolder { get; set; }
     }
 }

@@ -9,7 +9,6 @@ namespace SitecoreUrlShorter.Feature.Core.Infrastructure
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<IDataFolderRepository, DataFolderRepository>();
             serviceCollection.AddSingleton<ISettingsRepository, SettingsRepository>();
             serviceCollection.AddSingleton<IShortUrlRepository, ShortUrlRepository>();
         }
