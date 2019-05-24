@@ -4,6 +4,11 @@ Parent: "fc6c4168-d6c3-49fc-a55c-dc2855bab877"
 Template: "5a0ee477-e36e-4773-8b87-e6f5ca389076"
 Path: /sitecore/system/Modules/URL Shortening Service/URL Shortening Service Entries Folder
 DB: master
+SharedFields:
+- ID: "d312103c-b36c-4ca5-864a-c85f9abda503"
+  Hint: __Is Bucket
+  Type: Checkbox
+  Value: 0
 Languages:
 - Language: en
   Versions:

@@ -23,7 +23,13 @@ namespace SitecoreUrlShorter.Feature.Core.Infrastructure.Pipelines
             if (!requestDomain.Equals(_settingsRepository.GetDomain())) return;
 
             var shorthand = args.RequestUrl.Segments[1];
-            if (_shortUrlRepository.GetShortUrlEntryByShorthand(shorthand) == null) return;
+            var shortUrl = _shortUrlRepository.GetShortUrlEntryByShorthand(shorthand);
+
+            args.HttpContext.Response.RedirectPermanent(shortUrl == null
+                ? _settingsRepository.GetFallbackUrl().Url
+                : shortUrl.Destination.Url);
+
+            args.AbortPipeline();
         }
     }
 }

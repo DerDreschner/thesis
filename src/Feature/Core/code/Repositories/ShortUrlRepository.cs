@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Sitecore.Data;
 using SitecoreUrlShorter.Feature.Core.Models;
 
 namespace SitecoreUrlShorter.Feature.Core.Repositories
@@ -14,12 +15,12 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
 
         public IUrlShorteningServiceEntry GetShortUrlEntryByShorthand(string shorthand)
         {
-            return _entriesFolder.Entries.First(x => x.Shorthand == shorthand);
+            return _entriesFolder.Entries.FirstOrDefault(x => x.Shorthand == shorthand);
         }
 
-        public IUrlShorteningServiceEntry GetShortUrlEntryByDestination(string destination)
+        public IUrlShorteningServiceEntry GetShortUrlEntryById(ID itemId)
         {
-            return _entriesFolder.Entries.First(x => x.Destination.Url == destination);
+            return _entriesFolder.Entries.FirstOrDefault(x => x.Destination.TargetId == itemId.Guid);
         }
     }
 }

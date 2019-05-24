@@ -48,6 +48,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Users\admin\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Kernel.9.1.0\lib\net471\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -78,7 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\UserInterface.Serialization.config" />
-    <Content Include="Scripts\Feature.UserInterface.js" />
+    <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.css" />
+    <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.js" />
     <Content Include="App_Config\Include\Feature\Feature.UserInterface.config" />
     <None Include="Web.config" />
   </ItemGroup>
@@ -92,7 +97,12 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\code\SitecoreUrlShorter.Feature.Core.csproj">
+      <Project>{f39328a4-9a9d-4ae3-9954-dcc5b85aa789}</Project>
+      <Name>SitecoreUrlShorter.Feature.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

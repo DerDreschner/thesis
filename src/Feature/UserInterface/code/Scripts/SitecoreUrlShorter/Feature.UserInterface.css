@@ -1,0 +1,42 @@
+﻿.verticallyCentered {
+    line-height: 40px;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.generateUrlButton {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.showUrlOutput {
+    margin-left: 10px;
+}
+
+.copyShortUrlButton {
+    /* ReSharper disable Html.PathError */
+    background: url("/temp/iconcache/office/32x32/clipboard_paste.png");
+    /* ReSharper restore Html.PathError */
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    padding-right: 20px;
+    padding-left: 15px;
+    padding-top: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 15px;
+    margin-left: 7px;
+    border: 0;
+    cursor: pointer;
+}
+
+.shortUrlOutput:hover {
+    background-color: #E3E3E3;
+}
