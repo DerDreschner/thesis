@@ -11,6 +11,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Pipelines {
         private const string JavascriptTag = "<script src=\"{0}\"></script>";
         private const string StylesheetLinkTag = "<link href=\"{0}\" rel=\"stylesheet\" />";
 
+        // ReSharper disable once UnusedParameter.Global
         // ReSharper disable once UnusedMember.Global
         public void Process(PipelineArgs args) {
             AddControls(JavascriptTag, "SitecoreUrlShorter.Feature.UserInterface.JavaScript");

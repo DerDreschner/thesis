@@ -40,8 +40,8 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Commands {
         }
 
         private static bool HasShortUrl(IReadOnlyList<Item> items) {
-            return ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>()
-                                 .GetShortUrlEntryById(items[0].ID) != null;
+            return ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>().GetShortUrlEntryById(items[0].ID) !=
+                   null;
         }
     }
 }
