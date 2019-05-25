@@ -318,3 +318,7 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# Leprechaun generated templates
+Templates.cs
+!**/Leprechaun/bin

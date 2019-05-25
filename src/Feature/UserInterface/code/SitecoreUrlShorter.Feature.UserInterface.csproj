@@ -43,11 +43,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Glass.Mapper, Version=5.4.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Glass.Mapper.Sc.91.Core.5.4.21\lib\net471\Glass.Mapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper.Sc, Version=5.4.21.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Glass.Mapper.Sc.91.Core.5.4.21\lib\net471\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Kernel.9.1.0\lib\net471\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -78,13 +87,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\UserInterface.Serialization.config" />
-    <Content Include="Scripts\Feature.UserInterface.js" />
+    <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.css" />
+    <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.js" />
     <Content Include="App_Config\Include\Feature\Feature.UserInterface.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\GenerateNewUrlCommand.cs" />
     <Compile Include="Panels\ShowUrlPanel.cs" />
-    <Compile Include="Panels\GenerateUrlPanel.cs" />
     <Compile Include="Pipelines\AddScriptsToContentEditor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -92,7 +102,12 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\code\SitecoreUrlShorter.Feature.Core.csproj">
+      <Project>{f39328a4-9a9d-4ae3-9954-dcc5b85aa789}</Project>
+      <Name>SitecoreUrlShorter.Feature.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

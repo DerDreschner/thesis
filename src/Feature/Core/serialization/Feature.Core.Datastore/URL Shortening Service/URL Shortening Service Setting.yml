@@ -1,0 +1,32 @@
+﻿---
+ID: "dd69780a-d27a-4cab-bd1c-b81bc9ca99bd"
+Parent: "fc6c4168-d6c3-49fc-a55c-dc2855bab877"
+Template: "430ca388-4f5e-4ef0-8307-5a97556414cd"
+Path: /sitecore/system/Modules/URL Shortening Service/URL Shortening Service Settings
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Fields:
+  - ID: "53fd61c0-2da1-402b-aa79-89df9d0f999e"
+    Hint: ShorthandCharacters
+    Value: ABCDEFGHIJKLMNOPQRSTUVVXYZabcdefghijklmnopqrstuvwxyz0123456789
+  - ID: "6b1500e9-9863-4995-9167-4167710639fd"
+    Hint: FallbackUrl
+    Value: |
+      <link linktype="external" url="https://www.mactechnews.de" anchor="" target="" />
+  - ID: "836a169d-e485-48e5-95e3-e27a01cc1101"
+    Hint: Domain
+    Value: shrtsvc.local
+  - ID: "bd64126e-f5fa-4bc0-8a6c-cebddbcd09ed"
+    Hint: Folder
+    Value: "{BA0E3166-3F23-4C6E-9D19-ED45BE1C05E7}"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190524T053836Z

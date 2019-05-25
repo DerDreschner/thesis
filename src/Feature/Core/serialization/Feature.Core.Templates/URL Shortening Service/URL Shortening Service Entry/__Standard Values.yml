@@ -1,0 +1,23 @@
+﻿---
+ID: "4257282f-a69d-467c-a5a8-3e7c173abe18"
+Parent: "798b3770-004b-4758-91f6-4616a1b63a29"
+Template: "798b3770-004b-4758-91f6-4616a1b63a29"
+Path: /sitecore/templates/System/URL Shortening Service/URL Shortening Service Entry/__Standard Values
+DB: master
+SharedFields:
+- ID: "c9283d9e-7c29-4419-9c28-5a5c8ff53e84"
+  Hint: __Bucketable
+  Type: Checkbox
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190524T052656Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
