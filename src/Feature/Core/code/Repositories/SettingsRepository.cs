@@ -1,5 +1,4 @@
-﻿using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Fields;
+﻿using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Web;
 using Sitecore.Configuration;
 using SitecoreUrlShorter.Feature.Core.Models;
