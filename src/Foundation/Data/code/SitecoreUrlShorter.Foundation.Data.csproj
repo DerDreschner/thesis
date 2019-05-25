@@ -145,7 +145,7 @@
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />
-    <Content Include="App_Config\Include\Foundation\SitecoreUrlShorter\Foundation.Data.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Foundation.Data.config" />
     <None Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />

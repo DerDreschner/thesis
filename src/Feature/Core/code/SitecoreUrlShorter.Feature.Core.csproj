@@ -99,8 +99,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\Feature.Core.Serialization.config" />
-    <Content Include="App_Config\Include\Feature\Feature.Core.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Feature.Core.Serialization.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Feature.Core.config" />
     <None Include="CodeGen.config">
       <SubType>Designer</SubType>
     </None>
