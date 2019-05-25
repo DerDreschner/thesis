@@ -12,15 +12,15 @@ Languages:
 - Language: en
   Fields:
   - ID: "53fd61c0-2da1-402b-aa79-89df9d0f999e"
-    Hint: ShorthandCharacters
+    Hint: ShorthandPattern
     Value: ABCDEFGHIJKLMNOPQRSTUVVXYZabcdefghijklmnopqrstuvwxyz0123456789
   - ID: "6b1500e9-9863-4995-9167-4167710639fd"
     Hint: FallbackUrl
     Value: |
-      <link linktype="external" url="https://www.mactechnews.de" anchor="" target="" />
+      <link linktype="external" url="http://google.de/ThisDidntWorked" anchor="" target="" />
   - ID: "836a169d-e485-48e5-95e3-e27a01cc1101"
     Hint: Domain
-    Value: shrtsvc.local
+    Value: "http://shrtsvc.local"
   - ID: "bd64126e-f5fa-4bc0-8a6c-cebddbcd09ed"
     Hint: Folder
     Value: "{BA0E3166-3F23-4C6E-9D19-ED45BE1C05E7}"

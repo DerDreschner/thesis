@@ -7,6 +7,9 @@ DB: master
 Languages:
 - Language: en
   Fields:
+  - ID: "53fd61c0-2da1-402b-aa79-89df9d0f999e"
+    Hint: ShorthandPattern
+    Value: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
   - ID: "a0f9ecca-42e3-49fc-ab78-09b5d405cf3b"
     Hint: ShorthandLength
     Value: 7

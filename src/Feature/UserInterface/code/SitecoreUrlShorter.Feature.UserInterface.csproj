@@ -86,10 +86,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\UserInterface.Serialization.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Feature.UserInterface.Serialization.config" />
     <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.css" />
     <Content Include="Scripts\SitecoreUrlShorter\Feature.UserInterface.js" />
-    <Content Include="App_Config\Include\Feature\Feature.UserInterface.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Feature.UserInterface.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,15 +1,13 @@
 ﻿using System;
-using Glass.Mapper.Sc.Configuration;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
-using Sitecore.Data;
+using JetBrains.Annotations;
 
-namespace SitecoreUrlShorter.Feature.Core.Models
-{
+namespace SitecoreUrlShorter.Feature.Core.Models {
     [SitecoreType(TemplateId = Templates.UrlShorteningServiceEntry.Id)]
-    public interface IUrlShorteningServiceEntry
-    {
+    public interface IUrlShorteningServiceEntry {
         [SitecoreId]
+        [UsedImplicitly]
         Guid Id { get; set; }
 
         [SitecoreField(FieldId = Templates.UrlShorteningServiceEntry.Fields.Shorthand)]

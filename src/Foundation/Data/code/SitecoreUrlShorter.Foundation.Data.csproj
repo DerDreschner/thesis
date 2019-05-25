@@ -45,7 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
@@ -141,11 +141,10 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Helix.config" />
     <Content Include="App_Config\Environment\Foundation\Foundation.Data.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
-    <Content Include="App_Config\Environment\Foundation\Foundation.Data.Serialization.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />
-    <Content Include="App_Config\Include\Foundation\SitecoreUrlShorter\Foundation.Data.config" />
+    <Content Include="App_Config\Include\SitecoreUrlShorter\Foundation.Data.config" />
     <None Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
@@ -161,17 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

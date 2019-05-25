@@ -1,59 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Glass.Mapper.Sc;
-using Glass.Mapper.Sc.Web;
 using Microsoft.Extensions.DependencyInjection;
+using Sitecore;
+using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
 using Sitecore.Shell.Framework.Commands;
-using Sitecore.Web.UI.WebControls.Presentation;
-using SitecoreUrlShorter.Feature.Core.Models;
 using SitecoreUrlShorter.Feature.Core.Repositories;
-using Item = Sitecore.Data.Items.Item;
 
-namespace SitecoreUrlShorter.Feature.UserInterface.Commands
-{
-    public class GenerateNewUrl : Command
-    {
-        public override void Execute (CommandContext context)
-        {
+namespace SitecoreUrlShorter.Feature.UserInterface.Commands {
+    // ReSharper disable once UnusedMember.Global
+    public class GenerateNewUrl : Command {
+        public override void Execute(CommandContext context) {
             var shortUrlRepository = ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>();
 
-            Sitecore.Context.Notifications.Disabled = true;
-
+            Context.Notifications.Disabled = true;
             shortUrlRepository.AddShortUrl(context.Items[0].ID.Guid);
+            Context.Notifications.Disabled = false;
 
-            Sitecore.Context.Notifications.Disabled = false;
-            Sitecore.Context.ClientPage.SendMessage(this, $"item:updated(id={context.Items[0].ID})");
+            Context.ClientPage.SendMessage(this, $"item:updated(id={context.Items[0].ID})");
         }
 
-        public override CommandState QueryState(CommandContext context)
-        {
-            try
-            {
-                var hasLayout = HasLayout(context.Items);
-
-                if (hasLayout)
-                {
+        public override CommandState QueryState(CommandContext context) {
+            try {
+                if (HasNoLayout(context.Items)) {
                     return CommandState.Disabled;
                 }
 
-                var hasShortUrl = ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>()
-                                      .GetShortUrlEntryById(context.Items[0].ID) != null;
+                var hasShortUrl = HasShortUrl(context.Items);
 
                 return hasShortUrl ? CommandState.Hidden : CommandState.Enabled;
-            }
-            catch
-            {
+            } catch {
                 return CommandState.Disabled;
             }
         }
 
-        private static bool HasLayout(IEnumerable<Item> items)
-        {
-            return items.Select(contextItem =>
-                string.IsNullOrEmpty(contextItem.Fields[Sitecore.FieldIDs.LayoutField].Value)).FirstOrDefault();
+        private static bool HasNoLayout(IEnumerable<Item> items) {
+            return items.Select(contextItem => string.IsNullOrEmpty(contextItem.Fields[FieldIDs.LayoutField].Value))
+                        .FirstOrDefault();
+        }
+
+        private static bool HasShortUrl(IReadOnlyList<Item> items) {
+            return ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>().GetShortUrlEntryById(items[0].ID) !=
+                   null;
         }
     }
 }
