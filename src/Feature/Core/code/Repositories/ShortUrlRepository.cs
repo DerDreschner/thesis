@@ -2,7 +2,7 @@
 using System.Linq;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
-using Glass.Mapper.Sc.Web.Mvc;
+using Glass.Mapper.Sc.Web;
 using Sitecore.Data;
 using SitecoreUrlShorter.Feature.Core.Generators;
 using SitecoreUrlShorter.Feature.Core.Models;
@@ -11,7 +11,7 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
     public class ShortUrlRepository : IShortUrlRepository {
         private readonly IUrlShorteningServiceEntriesFolder _entriesFolder;
 
-        private readonly IMvcContext _requestContext;
+        private readonly IRequestContext _requestContext;
 
         private readonly ISettingsRepository _settingsRepository;
 
@@ -19,7 +19,7 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
 
         public ShortUrlRepository(
             ISettingsRepository settingsRepository,
-            IMvcContext requestContext,
+            IRequestContext requestContext,
             IShorthandGenerator shorthandGenerator
         ) {
             _settingsRepository = settingsRepository;
@@ -41,19 +41,24 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
                 _settingsRepository.GetShorthandPattern());
 
             var createOptions = new CreateByNameOptions {
-                Parent = _entriesFolder, Name = shorthand, Type = typeof(IUrlShorteningServiceEntry), Silent = true
+                Parent = _entriesFolder,
+                Name = shorthand,
+                Type = typeof(IUrlShorteningServiceEntry),
+                Silent = true
             };
 
             var shortUrl = _requestContext.SitecoreService.CreateItem<IUrlShorteningServiceEntry>(createOptions);
 
             shortUrl.Destination = new Link {
-                TargetId = destination, Type = LinkType.Internal
+                TargetId = destination,
+                Type = LinkType.Internal
             };
 
             shortUrl.Shorthand = shorthand;
 
             _requestContext.SitecoreService.SaveItem(new SaveOptions {
-                Model = shortUrl, Silent = true
+                Model = shortUrl,
+                Silent = true
             });
         }
     }

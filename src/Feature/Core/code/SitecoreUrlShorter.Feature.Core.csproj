@@ -55,6 +55,9 @@
     <Reference Include="Glass.Mapper.Sc.Mvc">
       <HintPath>..\..\..\..\packages\Glass.Mapper.Sc.91.Mvc.5.4.21\lib\net471\Glass.Mapper.Sc.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2019.1.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\JetBrains.Annotations.2019.1.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -98,7 +101,9 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Core.Serialization.config" />
     <Content Include="App_Config\Include\Feature\Feature.Core.config" />
-    <None Include="CodeGen.config" />
+    <None Include="CodeGen.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
