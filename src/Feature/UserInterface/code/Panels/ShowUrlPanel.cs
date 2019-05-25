@@ -8,24 +8,17 @@ using Sitecore.Shell.Web.UI.WebControls;
 using Sitecore.Web.UI.WebControls.Ribbons;
 using SitecoreUrlShorter.Feature.Core.Repositories;
 
-namespace SitecoreUrlShorter.Feature.UserInterface.Panels
-{
+namespace SitecoreUrlShorter.Feature.UserInterface.Panels {
     // ReSharper disable once UnusedMember.Global
-    public class ShowUrlPanel : RibbonPanel
-    {
-
+    public class ShowUrlPanel : RibbonPanel {
         [SuppressMessage("ReSharper", "StringLiteralTypo")]
-        public override void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context)
-        {
-            try
-            {
-
+        public override void Render(HtmlTextWriter output, Ribbon ribbon, Item button, CommandContext context) {
+            try {
                 var shortUrlRepository = ServiceLocator.ServiceProvider.GetService<IShortUrlRepository>();
 
                 var shortUrl = shortUrlRepository.GetShortUrlEntryById(context.Items[0].ID);
 
-                if (shortUrl == null)
-                {
+                if (shortUrl == null) {
                     return;
                 }
 
@@ -39,9 +32,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Panels
                     $"<div class='verticallyCentered displayFlex'><input type='text' value='{domain}/{shortUrl.Shorthand}' size='27' id='shortUrl' class='showUrlOutput' readonly><button class='copyShortUrlButton' onclick=\"return copyToClipboard('shortUrl')\"></button></div>";
 
                 output.Write(htmlOutput);
-            }
-            catch
-            {
+            } catch {
                 // ignored
             }
         }
