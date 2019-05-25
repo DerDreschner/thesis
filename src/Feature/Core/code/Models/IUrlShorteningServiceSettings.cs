@@ -9,6 +9,9 @@ namespace SitecoreUrlShorter.Feature.Core.Models
         [SitecoreField(FieldId = Templates.UrlShorteningServiceSettings.Fields.ShorthandLength)]
         int ShorthandLength { get; set; }
 
+        [SitecoreField(FieldId = Templates.UrlShorteningServiceSettings.Fields.ShorthandPattern)]
+        string ShorthandPattern { get; set; }
+
         [SitecoreField(FieldId = Templates.UrlShorteningServiceSettings.Fields.Domain)]
         string Domain { get; set; }
 

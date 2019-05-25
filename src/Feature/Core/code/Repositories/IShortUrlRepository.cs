@@ -9,5 +9,7 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
         IUrlShorteningServiceEntry GetShortUrlEntryByShorthand(string shorthand);
 
         IUrlShorteningServiceEntry GetShortUrlEntryById(ID itemId);
+
+        void AddShortUrl(Guid destination);
     }
 }

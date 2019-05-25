@@ -19,8 +19,12 @@ namespace SitecoreUrlShorter.Feature.Core.Infrastructure.Pipelines
 
         public override void Process(HttpRequestArgs args)
         {
+            if (!ShouldRun(args)) return;
+
             var requestDomain = args.RequestUrl.Host;
-            if (!requestDomain.Equals(_settingsRepository.GetDomain())) return;
+            var serviceDomain = _settingsRepository.GetDomain();
+
+            if (!requestDomain.Equals(serviceDomain)) return;
 
             var shorthand = args.RequestUrl.Segments[1];
             var shortUrl = _shortUrlRepository.GetShortUrlEntryByShorthand(shorthand);
@@ -30,6 +34,13 @@ namespace SitecoreUrlShorter.Feature.Core.Infrastructure.Pipelines
                 : shortUrl.Destination.Url);
 
             args.AbortPipeline();
+
+
+        }
+
+        private static bool ShouldRun(HttpRequestArgs args)
+        {
+            return args != null && !args.RequestUrl.AbsolutePath.Contains("sitecore");
         }
     }
 }

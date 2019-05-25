@@ -11,6 +11,9 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "53fd61c0-2da1-402b-aa79-89df9d0f999e"
+    Hint: ShorthandCharacters
+    Value: ABCDEFGHIJKLMNOPQRSTUVVXYZabcdefghijklmnopqrstuvwxyz0123456789
   - ID: "6b1500e9-9863-4995-9167-4167710639fd"
     Hint: FallbackUrl
     Value: |

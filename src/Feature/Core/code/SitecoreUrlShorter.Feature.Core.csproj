@@ -98,10 +98,12 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Core.Serialization.config" />
     <Content Include="App_Config\Include\Feature\Feature.Core.config" />
-    <Content Include="CodeGen.config" />
+    <None Include="CodeGen.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Generators\IShorthandGenerator.cs" />
+    <Compile Include="Generators\ShorthandGenerator.cs" />
     <Compile Include="Infrastructure\CoreServicesConfiguration.cs" />
     <Compile Include="Infrastructure\Pipelines\ShortUrlResolver.cs" />
     <Compile Include="Models\IUrlShorteningServiceEntriesFolder.cs" />

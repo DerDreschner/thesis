@@ -11,6 +11,8 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
     {
         int GetShorthandLength();
 
+        string GetShorthandPattern();
+
         string GetDomain();
 
         Link GetFallbackUrl();

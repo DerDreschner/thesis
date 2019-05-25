@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Glass.Mapper.Sc.Fields;
+using Glass.Mapper.Sc.Web;
 using Glass.Mapper.Sc.Web.Mvc;
 using Sitecore.Configuration;
 using SitecoreUrlShorter.Feature.Core.Models;
@@ -13,14 +15,26 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
         public SettingsRepository(IMvcContext mvcContext)
         {
             var context = mvcContext.SitecoreService;
-            _settings =
-                context.GetItem<IUrlShorteningServiceSettings>(
+
+            try
+            {
+                _settings = context.GetItem<IUrlShorteningServiceSettings>(
                     Settings.GetSetting("SitecoreUrlShorter.Feature.Core.Settings"));
+            }
+            catch
+            {
+                // ignored
+            }
         }
 
         public int GetShorthandLength()
         {
             return _settings.ShorthandLength;
+        }
+
+        public string GetShorthandPattern()
+        {
+            return _settings.ShorthandPattern;
         }
 
         public string GetDomain()
@@ -35,7 +49,7 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories
 
         public IUrlShorteningServiceEntriesFolder GetEntriesFolder()
         {
-            return _settings.EntriesFolder;
+            return _settings?.EntriesFolder;
         }
     }
 }
