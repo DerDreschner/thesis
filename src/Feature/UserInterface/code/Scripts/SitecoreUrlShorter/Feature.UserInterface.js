@@ -1,8 +1,7 @@
-﻿function copyToClipboard(elementId) {
+﻿function copyToClipboard(elementId, message) {
     var textToCopy = document.getElementById(elementId);
     textToCopy.select();
     document.execCommand("copy");
-    textToCopy.unselect();
-    alert("Copied the text: " + textToCopy.value);
+    alert(message);
     return false;
 }

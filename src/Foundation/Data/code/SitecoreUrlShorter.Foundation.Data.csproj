@@ -141,7 +141,6 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Helix.config" />
     <Content Include="App_Config\Environment\Foundation\Foundation.Data.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.IdentityServer.config" />
-    <Content Include="App_Config\Environment\Foundation\Foundation.Data.Serialization.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass\Glass.Mapper.Sc.config" />

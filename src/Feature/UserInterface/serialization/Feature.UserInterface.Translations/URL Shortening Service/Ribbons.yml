@@ -1,0 +1,18 @@
+﻿---
+ID: "447bda16-5030-4e19-a2ce-61e8f34dfde5"
+Parent: "d538818a-429a-4f9f-90e7-f4f73bbdc6ca"
+Template: "267d9ac7-5d85-4e9d-af89-99ab296cc218"
+Path: /sitecore/system/Dictionary/Modules/URL Shortening Service/Ribbons
+DB: core
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/16x16/tab_pane.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190525T191029Z

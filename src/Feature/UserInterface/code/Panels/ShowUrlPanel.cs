@@ -3,6 +3,7 @@ using System.Web.UI;
 using Microsoft.Extensions.DependencyInjection;
 using Sitecore.Data.Items;
 using Sitecore.DependencyInjection;
+using Sitecore.Globalization;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Shell.Web.UI.WebControls;
 using Sitecore.Web.UI.WebControls.Ribbons;
@@ -25,11 +26,14 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Panels {
                 var settingsRepository = ServiceLocator.ServiceProvider.GetService<ISettingsRepository>();
 
                 var domain = settingsRepository.GetDomain();
+                var length = domain.Length + shortUrl.Shorthand.Length;
+                var tooltipText = Translate.Text("URLShorteningService_CopyShortURLButtonTooltip");
+                var copiedNotificationText = Translate.Text("URLShorteningService_ShortURLCopiedDialog");
 
-                var htmlOutput = string.Empty;
-
-                htmlOutput +=
-                    $"<div class='verticallyCentered displayFlex'><input type='text' value='{domain}/{shortUrl.Shorthand}' size='27' id='shortUrl' class='showUrlOutput' readonly><button class='copyShortUrlButton' onclick=\"return copyToClipboard('shortUrl')\"></button></div>";
+                var htmlOutput = "<div class='verticallyCentered displayFlex'>" +
+                                 $"<input type='text' value='{domain}/{shortUrl.Shorthand}' size='{length}' id='shortUrl' class='showUrlOutput' readonly>" +
+                                 $"<button class='copyShortUrlButton' title='{tooltipText}' onclick=\"return copyToClipboard('shortUrl', '{copiedNotificationText})\" >" +
+                                 "</button>" + "</div>";
 
                 output.Write(htmlOutput);
             } catch {
