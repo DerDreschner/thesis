@@ -22,7 +22,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Commands {
 
         public override CommandState QueryState(CommandContext context) {
             try {
-                if (HasntLayout(context.Items)) {
+                if (HasNoLayout(context.Items)) {
                     return CommandState.Disabled;
                 }
 
@@ -34,7 +34,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Commands {
             }
         }
 
-        private static bool HasntLayout(IEnumerable<Item> items) {
+        private static bool HasNoLayout(IEnumerable<Item> items) {
             return items.Select(contextItem => string.IsNullOrEmpty(contextItem.Fields[FieldIDs.LayoutField].Value))
                         .FirstOrDefault();
         }
