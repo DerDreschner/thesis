@@ -2,14 +2,15 @@
 This repository offers you the source code for the url shortening service made as part of my final exams as programmer. With this service you can generate short url for every site in your sitecore instance. The short url is resolved by this service afterwards which means no external services! All the power is in your hands.
 ## For administrators
 ### Compatibility
-This module was tested and works with sitecore 9.1 initial release only.
+This module was tested with sitecore 9.1 initial release only. May work with other releases of sitecore 9.1 though.
 ### How to install?
 Installation is fairly easy. 
 1. Install the provided SitecoreUrlShorter.zip through the sitecore installation wizard. This has to be done for each content management instance an editor is working on as well as the content delivery instances that should handle the requests to the url shortening service.
 2. Open the content editor. The main ribbon has a new strip called "Short URL".
-![Picture of the strip after installation](./img/after-installation.png)
-3. Navigate to `/sitecore/system/Modules/URL Shortening Service/URL Shortening Service Settings` inside of your master database and change the settings accordingly. _Note_: You can move this item and its childs to any place within your master database. Just make sure to edit the path in the `App_Config\Include\SitecoreUrlShorter\Feature.Core.config` afterwards.
 
+![Picture of the strip after installation](./img/after-installation.png)
+
+3. Navigate to `/sitecore/system/Modules/URL Shortening Service/URL Shortening Service Settings` inside of your master database and change the settings accordingly. _Note_: You can move this item and its childs to any place within your master database. Just make sure to edit the path in the `App_Config\Include\SitecoreUrlShorter\Feature.Core.config` afterwards.
 4. Make sure that each sitecore instance that has the url shortening service installed and is about to handle the requests to the choosen domain has the proper bindings configured in the iis web server.
 5. The module is easy to use. Easy as 1-2-3(-4)!
 
