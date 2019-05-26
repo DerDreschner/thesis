@@ -13,7 +13,7 @@
 
 .copyShortUrlButton {
     /* ReSharper disable Html.PathError */
-    background: url("/temp/iconcache/office/32x32/clipboard_paste.png");
+    background: url("/~/icon/office/32x32/clipboard_paste.png");
     /* ReSharper restore Html.PathError */
     background-position: center;
     background-repeat: no-repeat;

@@ -1,5 +1,5 @@
 ﻿---
-ID: "ba0e3166-3f23-4c6e-9d19-ed45be1c05e7"
+ID: "85c07a93-b8bb-459a-9908-d9ae97e1de35"
 Parent: "fc6c4168-d6c3-49fc-a55c-dc2855bab877"
 Template: "5a0ee477-e36e-4773-8b87-e6f5ca389076"
 Path: /sitecore/system/Modules/URL Shortening Service/URL Shortening Service Entries Folder
@@ -16,4 +16,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20190524T053918Z
+      Value: 20190526T073411Z
