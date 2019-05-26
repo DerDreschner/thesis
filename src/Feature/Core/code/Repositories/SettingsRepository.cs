@@ -1,4 +1,5 @@
-﻿using Glass.Mapper.Sc.Fields;
+﻿using Glass.Mapper.Sc;
+using Glass.Mapper.Sc.Fields;
 using Glass.Mapper.Sc.Web;
 using Sitecore.Configuration;
 using SitecoreUrlShorter.Feature.Core.Models;
@@ -11,8 +12,11 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
             var context = requestContext.SitecoreService;
 
             try {
-                _settings = context.GetItem<IUrlShorteningServiceSettings>(
-                    Settings.GetSetting("SitecoreUrlShorter.Feature.Core.Settings"));
+                var options = new GetItemByPathOptions {
+                    Path = Settings.GetSetting("SitecoreUrlShorter.Feature.Core.Settings")
+                };
+
+                _settings = context.GetItem<IUrlShorteningServiceSettings>(options);
             } catch {
                 // ignored
             }

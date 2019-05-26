@@ -36,11 +36,9 @@ namespace SitecoreUrlShorter.Feature.Core.Infrastructure.Pipelines {
         }
 
         private static bool ShouldRun(HttpRequestArgs args) {
-            return args != null &&
-                   !args.RequestUrl.AbsoluteUri.Contains("/sitecore/") &&
-                   !args.RequestUrl.AbsoluteUri.Contains("/-/") &&
-                   !args.RequestUrl.AbsoluteUri.Contains("/~/") &&
-                   !args.RequestUrl.AbsoluteUri.Contains("/layout/");
+            return args != null && !args.RequestUrl.AbsoluteUri.Contains("/sitecore/") &&
+                   !args.RequestUrl.AbsoluteUri.Contains("/-/") && !args.RequestUrl.AbsoluteUri.Contains("/~/") &&
+                   !args.RequestUrl.AbsoluteUri.Contains("/layouts/");
         }
     }
 }
