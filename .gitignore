@@ -322,3 +322,4 @@ ASALocalRun/
 # Leprechaun generated templates
 Templates.cs
 !**/Leprechaun/bin
+!releases
