@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{0392A955-1272-43FE-9BF3-F9EAD6724A54}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\README.md = Documentation\README.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{3380B199-59D0-4E43-9C9F-6C98EB8B34B9}"
