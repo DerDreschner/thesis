@@ -32,7 +32,7 @@ namespace SitecoreUrlShorter.Feature.UserInterface.Panels {
 
                 var htmlOutput = "<div class='verticallyCentered displayFlex'>" +
                                  $"<input type='text' value='{domain}/{shortUrl.Shorthand}' size='{length}' id='shortUrl' class='showUrlOutput' readonly>" +
-                                 $"<button class='copyShortUrlButton' title='{tooltipText}' onclick=\"return copyToClipboard('shortUrl', '{copiedNotificationText})\" >" +
+                                 $"<button class='copyShortUrlButton' title='{tooltipText}' onclick=\"return copyToClipboard('shortUrl', '{copiedNotificationText}')\" >" +
                                  "</button>" + "</div>";
 
                 output.Write(htmlOutput);
