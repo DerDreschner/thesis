@@ -13,7 +13,7 @@ namespace SitecoreUrlShorter.Feature.Core.Models {
         public virtual Guid Id { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Name)]
-        public virtual string Name { get; set; }
+        public virtual string Name { [UsedImplicitly] get; set; }
 
         [SitecoreField(FieldId = Templates.UrlShorteningServiceEntry.Fields.Shorthand)]
         public virtual string Shorthand { get; set; }
