@@ -23,16 +23,16 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
             IShorthandGenerator shorthandGenerator
         ) {
             _settingsRepository = settingsRepository;
-            _entriesFolder = settingsRepository.GetEntriesFolder();
+            _entriesFolder = _settingsRepository.GetEntriesFolder();
             _requestContext = requestContext;
             _shorthandGenerator = shorthandGenerator;
         }
 
-        public IUrlShorteningServiceEntry GetShortUrlEntryByShorthand(string shorthand) {
+        public UrlShorteningServiceEntry GetShortUrlEntryByShorthand(string shorthand) {
             return _entriesFolder.Entries.FirstOrDefault(x => x.Shorthand == shorthand);
         }
 
-        public IUrlShorteningServiceEntry GetShortUrlEntryById(ID itemId) {
+        public UrlShorteningServiceEntry GetShortUrlEntryById(ID itemId) {
             return _entriesFolder.Entries.FirstOrDefault(x => x.Destination.TargetId == itemId.Guid);
         }
 
@@ -40,26 +40,21 @@ namespace SitecoreUrlShorter.Feature.Core.Repositories {
             var shorthand = _shorthandGenerator.GenerateShorthand(_settingsRepository.GetShorthandLength(),
                 _settingsRepository.GetShorthandPattern());
 
-            var createOptions = new CreateByNameOptions {
-                Parent = _entriesFolder,
+            var model = new UrlShorteningServiceEntry {
                 Name = shorthand,
-                Type = typeof(IUrlShorteningServiceEntry),
+                Shorthand = shorthand,
+                Destination = new Link {
+                    TargetId = destination,
+                    Type = LinkType.Internal
+                }
+            };
+
+            var createOptions = new CreateByModelOptions(model) {
+                Parent = _entriesFolder,
                 Silent = true
             };
 
-            var shortUrl = _requestContext.SitecoreService.CreateItem<IUrlShorteningServiceEntry>(createOptions);
-
-            shortUrl.Destination = new Link {
-                TargetId = destination,
-                Type = LinkType.Internal
-            };
-
-            shortUrl.Shorthand = shorthand;
-
-            _requestContext.SitecoreService.SaveItem(new SaveOptions {
-                Model = shortUrl,
-                Silent = true
-            });
+            _requestContext.SitecoreService.CreateItem(createOptions);
         }
     }
 }

@@ -13,12 +13,15 @@ namespace SitecoreUrlShorter.Foundation.Data.Infrastructure {
         public void Configure(IServiceCollection serviceCollection) {
             serviceCollection.AddTransient<ISitecoreService>(provider
                 => new SitecoreService(Context.ContentDatabase ?? Context.Database));
+            serviceCollection.AddTransient<IGlassHtml, GlassHtml>();
             serviceCollection.AddTransient<IRequestContext, RequestContext>();
             serviceCollection.AddTransient<IMvcContext, MvcContext>();
             serviceCollection.AddTransient<IWebFormsContext, WebFormsContext>();
 
             serviceCollection.AddSingleton<Func<ISitecoreService>>(_ => ()
                 => ServiceLocator.ServiceProvider.GetService<ISitecoreService>());
+            serviceCollection.AddSingleton<Func<IGlassHtml>>(_ => ()
+                => ServiceLocator.ServiceProvider.GetService<IGlassHtml>());
             serviceCollection.AddSingleton<Func<IRequestContext>>(_ => ()
                 => ServiceLocator.ServiceProvider.GetService<IRequestContext>());
             serviceCollection.AddSingleton<Func<IMvcContext>>(_ => ()

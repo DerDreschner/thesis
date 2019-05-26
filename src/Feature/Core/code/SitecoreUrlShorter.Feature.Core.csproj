@@ -112,7 +112,7 @@
     <Compile Include="Infrastructure\CoreServicesConfiguration.cs" />
     <Compile Include="Infrastructure\Pipelines\ShortUrlResolver.cs" />
     <Compile Include="Models\IUrlShorteningServiceEntriesFolder.cs" />
-    <Compile Include="Models\IUrlShorteningServiceEntry.cs" />
+    <Compile Include="Models\UrlShorteningServiceEntry.cs" />
     <Compile Include="Models\IUrlShorteningServiceSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ISettingsRepository.cs" />

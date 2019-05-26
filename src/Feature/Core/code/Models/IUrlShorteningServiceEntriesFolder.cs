@@ -11,6 +11,6 @@ namespace SitecoreUrlShorter.Feature.Core.Models {
         Guid Id { get; [UsedImplicitly] set; }
 
         [SitecoreChildren]
-        IEnumerable<IUrlShorteningServiceEntry> Entries { get; [UsedImplicitly] set; }
+        IEnumerable<UrlShorteningServiceEntry> Entries { get; [UsedImplicitly] set; }
     }
 }
