@@ -1,0 +1,18 @@
+﻿---
+ID: "d3cf0b2f-9445-4eb2-8045-e12561e2320f"
+Parent: "d538818a-429a-4f9f-90e7-f4f73bbdc6ca"
+Template: "267d9ac7-5d85-4e9d-af89-99ab296cc218"
+Path: /sitecore/system/Dictionary/Modules/URL Shortening Service/Dialogs
+DB: core
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/16x16/window_dialog.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190525T190840Z
