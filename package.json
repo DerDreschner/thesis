@@ -19,7 +19,7 @@
     "gulp-clean": "^0.4.0",
     "gulp-debug": "^4.0.0",
     "gulp-foreach": "^0.1.0",
-    "gulp-msbuild": "^0.5.5",
+    "gulp-msbuild": "^0.11.3",
     "gulp-nuget-restore": "^0.6.0",
     "gulp-rename": "^1.4.0",
     "gulp-token-replace": "^1.1.2",
